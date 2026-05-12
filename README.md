@@ -17,3 +17,30 @@ jangan lupa kerjaan kalian udah termasuk sama codingannya. engga perlu nge test 
 ngerjain harus teliti & lengkap. pastikan gpt juga teliti
 
 kalau ada mau tukar kerjaan, boleh di diskusikan. kalau ada yang kesusahan, info di grup
+
+---
+
+pembagian pemvis pa
+* Azira
+    - [x] Dashboard admin
+    - [x] Dashboard staff
+    - [x] Module koneksi, data, validation, session
+    - [x] Database
+    - [x] Form Booking milik Staff
+    - [ ] Form tampilan data terpisah
+* Andra 
+    - [ ] Form Data Owner milik Staff (CRUD)
+    - [ ] Form Data Hewan milik Staff (CRUD)
+    - [ ] Form Status Kandang milik Staff (hanya menampilkan data kandang apakah kosong atau tidak/dgv)
+    - [ ] Form Data User milik Admin (CRUD)
+* Triya
+    - [ ] Form Perawatan milik Staff (Pilih Nama Hewan, pilih perawatan, tampilkan tarif, tambah update hapus)
+    - [ ] Form Pembayaran milik Staff
+    - [ ] Print Invoice
+    - [ ] Print Laporan
+* Lila
+    - [ ] Form Login & regis
+    - [ ] Form Data Kandang milik Admin (CRUD)
+    - [ ] Form Data Perawatan milik Admin (CRUD)
+    - [ ] Form Metode Pembayaran milik Admin (crud metode saja seperti qris, transfer, dll)
+    - [ ] Form Pengaturan Tarif milik Admin (update tarif)
