@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿Imports Microsoft.VisualBasic.ApplicationServices
 
 Namespace My
@@ -28,7 +27,7 @@ Namespace My
 
     End Class
 End Namespace
-=======
+
 ﻿Imports Microsoft.VisualBasic.ApplicationServices
 
 Namespace My
@@ -58,4 +57,4 @@ Namespace My
 
     End Class
 End Namespace
->>>>>>> 75493cd28b59fdcffd325653ac2c16959186e463
+
