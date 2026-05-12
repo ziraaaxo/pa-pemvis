@@ -26,6 +26,12 @@ Partial Class FormAdmin
         Label1 = New Label()
         panelUtama = New Panel()
         panelSidebar = New Panel()
+        panelDashboard = New Panel()
+        lblDashboard = New Label()
+        panelIndicatorDashboard = New Panel()
+        panelLogout = New Panel()
+        lblLogout = New Label()
+        panelIndicatorLogout = New Panel()
         Panel2 = New Panel()
         panelTarif = New Panel()
         lblTarif = New Label()
@@ -46,14 +52,10 @@ Partial Class FormAdmin
         panelIndicatorKandang = New Panel()
         Label2 = New Label()
         picUtama = New PictureBox()
-        panelLogout = New Panel()
-        lblLogout = New Label()
-        panelIndicatorLogout = New Panel()
-        panelDashboard = New Panel()
-        lblDashboard = New Label()
-        panelIndicatorDashboard = New Panel()
         Panel1.SuspendLayout()
         panelSidebar.SuspendLayout()
+        panelDashboard.SuspendLayout()
+        panelLogout.SuspendLayout()
         Panel2.SuspendLayout()
         panelTarif.SuspendLayout()
         panelUser.SuspendLayout()
@@ -62,8 +64,6 @@ Partial Class FormAdmin
         panelPerawatan.SuspendLayout()
         panelKandang.SuspendLayout()
         CType(picUtama, ComponentModel.ISupportInitialize).BeginInit()
-        panelLogout.SuspendLayout()
-        panelDashboard.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -107,6 +107,68 @@ Partial Class FormAdmin
         panelSidebar.Name = "panelSidebar"
         panelSidebar.Size = New Size(376, 1276)
         panelSidebar.TabIndex = 3
+        ' 
+        ' panelDashboard
+        ' 
+        panelDashboard.Controls.Add(lblDashboard)
+        panelDashboard.Controls.Add(panelIndicatorDashboard)
+        panelDashboard.Location = New Point(4, 115)
+        panelDashboard.Name = "panelDashboard"
+        panelDashboard.Size = New Size(376, 102)
+        panelDashboard.TabIndex = 14
+        ' 
+        ' lblDashboard
+        ' 
+        lblDashboard.AutoSize = True
+        lblDashboard.Dock = DockStyle.Fill
+        lblDashboard.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblDashboard.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
+        lblDashboard.Location = New Point(5, 0)
+        lblDashboard.Name = "lblDashboard"
+        lblDashboard.Padding = New Padding(30, 35, 0, 0)
+        lblDashboard.Size = New Size(175, 69)
+        lblDashboard.TabIndex = 1
+        lblDashboard.Text = "Dashboard"
+        lblDashboard.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' panelIndicatorDashboard
+        ' 
+        panelIndicatorDashboard.Dock = DockStyle.Left
+        panelIndicatorDashboard.Location = New Point(0, 0)
+        panelIndicatorDashboard.Name = "panelIndicatorDashboard"
+        panelIndicatorDashboard.Size = New Size(5, 102)
+        panelIndicatorDashboard.TabIndex = 0
+        ' 
+        ' panelLogout
+        ' 
+        panelLogout.Controls.Add(lblLogout)
+        panelLogout.Controls.Add(panelIndicatorLogout)
+        panelLogout.Location = New Point(4, 846)
+        panelLogout.Name = "panelLogout"
+        panelLogout.Size = New Size(376, 102)
+        panelLogout.TabIndex = 13
+        ' 
+        ' lblLogout
+        ' 
+        lblLogout.AutoSize = True
+        lblLogout.Dock = DockStyle.Fill
+        lblLogout.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblLogout.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
+        lblLogout.Location = New Point(5, 0)
+        lblLogout.Name = "lblLogout"
+        lblLogout.Padding = New Padding(30, 35, 0, 0)
+        lblLogout.Size = New Size(130, 69)
+        lblLogout.TabIndex = 1
+        lblLogout.Text = "Logout"
+        lblLogout.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' panelIndicatorLogout
+        ' 
+        panelIndicatorLogout.Dock = DockStyle.Left
+        panelIndicatorLogout.Location = New Point(0, 0)
+        panelIndicatorLogout.Name = "panelIndicatorLogout"
+        panelIndicatorLogout.Size = New Size(5, 102)
+        panelIndicatorLogout.TabIndex = 0
         ' 
         ' Panel2
         ' 
@@ -314,68 +376,6 @@ Partial Class FormAdmin
         picUtama.TabIndex = 10
         picUtama.TabStop = False
         ' 
-        ' panelLogout
-        ' 
-        panelLogout.Controls.Add(lblLogout)
-        panelLogout.Controls.Add(panelIndicatorLogout)
-        panelLogout.Location = New Point(4, 846)
-        panelLogout.Name = "panelLogout"
-        panelLogout.Size = New Size(376, 102)
-        panelLogout.TabIndex = 13
-        ' 
-        ' lblLogout
-        ' 
-        lblLogout.AutoSize = True
-        lblLogout.Dock = DockStyle.Fill
-        lblLogout.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblLogout.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
-        lblLogout.Location = New Point(5, 0)
-        lblLogout.Name = "lblLogout"
-        lblLogout.Padding = New Padding(30, 35, 0, 0)
-        lblLogout.Size = New Size(130, 69)
-        lblLogout.TabIndex = 1
-        lblLogout.Text = "Logout"
-        lblLogout.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' panelIndicatorLogout
-        ' 
-        panelIndicatorLogout.Dock = DockStyle.Left
-        panelIndicatorLogout.Location = New Point(0, 0)
-        panelIndicatorLogout.Name = "panelIndicatorLogout"
-        panelIndicatorLogout.Size = New Size(5, 102)
-        panelIndicatorLogout.TabIndex = 0
-        ' 
-        ' panelDashboard
-        ' 
-        panelDashboard.Controls.Add(lblDashboard)
-        panelDashboard.Controls.Add(panelIndicatorDashboard)
-        panelDashboard.Location = New Point(4, 115)
-        panelDashboard.Name = "panelDashboard"
-        panelDashboard.Size = New Size(376, 102)
-        panelDashboard.TabIndex = 14
-        ' 
-        ' lblDashboard
-        ' 
-        lblDashboard.AutoSize = True
-        lblDashboard.Dock = DockStyle.Fill
-        lblDashboard.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblDashboard.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
-        lblDashboard.Location = New Point(5, 0)
-        lblDashboard.Name = "lblDashboard"
-        lblDashboard.Padding = New Padding(30, 35, 0, 0)
-        lblDashboard.Size = New Size(175, 69)
-        lblDashboard.TabIndex = 1
-        lblDashboard.Text = "Dashboard"
-        lblDashboard.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' panelIndicatorDashboard
-        ' 
-        panelIndicatorDashboard.Dock = DockStyle.Left
-        panelIndicatorDashboard.Location = New Point(0, 0)
-        panelIndicatorDashboard.Name = "panelIndicatorDashboard"
-        panelIndicatorDashboard.Size = New Size(5, 102)
-        panelIndicatorDashboard.TabIndex = 0
-        ' 
         ' FormAdmin
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
@@ -395,6 +395,10 @@ Partial Class FormAdmin
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         panelSidebar.ResumeLayout(False)
+        panelDashboard.ResumeLayout(False)
+        panelDashboard.PerformLayout()
+        panelLogout.ResumeLayout(False)
+        panelLogout.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         panelTarif.ResumeLayout(False)
@@ -410,10 +414,6 @@ Partial Class FormAdmin
         panelKandang.ResumeLayout(False)
         panelKandang.PerformLayout()
         CType(picUtama, ComponentModel.ISupportInitialize).EndInit()
-        panelLogout.ResumeLayout(False)
-        panelLogout.PerformLayout()
-        panelDashboard.ResumeLayout(False)
-        panelDashboard.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents Panel1 As Panel
@@ -439,7 +439,6 @@ Partial Class FormAdmin
     Friend WithEvents panelIndicatorUser As Panel
     Friend WithEvents panelPerawatan As Panel
     Friend WithEvents lblPerawatan As Label
-    Friend WithEvents panelUser As Panel
     Friend WithEvents panelKandang As Panel
     Friend WithEvents lblKandang As Label
     Friend WithEvents panelIndicatorTarif As Panel
@@ -452,6 +451,5 @@ Partial Class FormAdmin
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblTarif As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents lblUser As Label
 
 End Class

@@ -27,6 +27,9 @@ Partial Class FormStaff
         panelUtama = New Panel()
         panelSidebar = New Panel()
         picUtama = New PictureBox()
+        panelLogout = New Panel()
+        lblLogout = New Label()
+        panelIndicatorLogout = New Panel()
         panelPembayaran = New Panel()
         lblPembayaran = New Label()
         PanelIndicatorPembayaran = New Panel()
@@ -48,12 +51,10 @@ Partial Class FormStaff
         panelDashboard = New Panel()
         lblDashboard = New Label()
         panelIndicatorDashboard = New Panel()
-        panelIndicatorLogout = New Panel()
-        lblLogout = New Label()
-        panelLogout = New Panel()
         Panel1.SuspendLayout()
         panelSidebar.SuspendLayout()
         CType(picUtama, ComponentModel.ISupportInitialize).BeginInit()
+        panelLogout.SuspendLayout()
         panelPembayaran.SuspendLayout()
         panelPerawatan.SuspendLayout()
         panelKandang.SuspendLayout()
@@ -61,7 +62,6 @@ Partial Class FormStaff
         panelOwner.SuspendLayout()
         panelBooking.SuspendLayout()
         panelDashboard.SuspendLayout()
-        panelLogout.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -117,6 +117,37 @@ Partial Class FormStaff
         picUtama.Size = New Size(200, 100)
         picUtama.TabIndex = 10
         picUtama.TabStop = False
+        ' 
+        ' panelLogout
+        ' 
+        panelLogout.Controls.Add(lblLogout)
+        panelLogout.Controls.Add(panelIndicatorLogout)
+        panelLogout.Location = New Point(3, 871)
+        panelLogout.Name = "panelLogout"
+        panelLogout.Size = New Size(376, 102)
+        panelLogout.TabIndex = 8
+        ' 
+        ' lblLogout
+        ' 
+        lblLogout.AutoSize = True
+        lblLogout.Dock = DockStyle.Fill
+        lblLogout.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblLogout.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
+        lblLogout.Location = New Point(5, 0)
+        lblLogout.Name = "lblLogout"
+        lblLogout.Padding = New Padding(30, 35, 0, 0)
+        lblLogout.Size = New Size(130, 69)
+        lblLogout.TabIndex = 1
+        lblLogout.Text = "Logout"
+        lblLogout.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' panelIndicatorLogout
+        ' 
+        panelIndicatorLogout.Dock = DockStyle.Left
+        panelIndicatorLogout.Location = New Point(0, 0)
+        panelIndicatorLogout.Name = "panelIndicatorLogout"
+        panelIndicatorLogout.Size = New Size(5, 102)
+        panelIndicatorLogout.TabIndex = 0
         ' 
         ' panelPembayaran
         ' 
@@ -335,37 +366,6 @@ Partial Class FormStaff
         panelIndicatorDashboard.Size = New Size(5, 102)
         panelIndicatorDashboard.TabIndex = 0
         ' 
-        ' panelIndicatorLogout
-        ' 
-        panelIndicatorLogout.Dock = DockStyle.Left
-        panelIndicatorLogout.Location = New Point(0, 0)
-        panelIndicatorLogout.Name = "panelIndicatorLogout"
-        panelIndicatorLogout.Size = New Size(5, 102)
-        panelIndicatorLogout.TabIndex = 0
-        ' 
-        ' lblLogout
-        ' 
-        lblLogout.AutoSize = True
-        lblLogout.Dock = DockStyle.Fill
-        lblLogout.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblLogout.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
-        lblLogout.Location = New Point(5, 0)
-        lblLogout.Name = "lblLogout"
-        lblLogout.Padding = New Padding(30, 35, 0, 0)
-        lblLogout.Size = New Size(130, 69)
-        lblLogout.TabIndex = 1
-        lblLogout.Text = "Logout"
-        lblLogout.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' panelLogout
-        ' 
-        panelLogout.Controls.Add(lblLogout)
-        panelLogout.Controls.Add(panelIndicatorLogout)
-        panelLogout.Location = New Point(3, 871)
-        panelLogout.Name = "panelLogout"
-        panelLogout.Size = New Size(376, 102)
-        panelLogout.TabIndex = 8
-        ' 
         ' FormStaff
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
@@ -382,6 +382,8 @@ Partial Class FormStaff
         Panel1.PerformLayout()
         panelSidebar.ResumeLayout(False)
         CType(picUtama, ComponentModel.ISupportInitialize).EndInit()
+        panelLogout.ResumeLayout(False)
+        panelLogout.PerformLayout()
         panelPembayaran.ResumeLayout(False)
         panelPembayaran.PerformLayout()
         panelPerawatan.ResumeLayout(False)
@@ -396,8 +398,6 @@ Partial Class FormStaff
         panelBooking.PerformLayout()
         panelDashboard.ResumeLayout(False)
         panelDashboard.PerformLayout()
-        panelLogout.ResumeLayout(False)
-        panelLogout.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents Panel1 As Panel
