@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="uc_Booking.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_Dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="userControlBooking.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+>>>>>>> 75493cd28b59fdcffd325653ac2c16959186e463
+</Project>
