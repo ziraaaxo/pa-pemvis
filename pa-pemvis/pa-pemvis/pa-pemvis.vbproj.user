@@ -8,10 +8,43 @@
     <Compile Update="FormStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="uc_Booking.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="uc_Dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_DataHewan.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_DataOwner.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_DataUser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_Kandang.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_MetodePembayaran.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_pembayaranStaff.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_Perawatan.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_perawatanStaff.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_StatusKandang.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc_Tarif.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

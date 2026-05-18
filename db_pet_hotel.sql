@@ -285,3 +285,14 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE `pembayaran` MODIFY `metode_pembayaran` varchar(50) NOT NULL;
+  
+CREATE TABLE `metode_pembayaran` (
+  `id_metode` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_metode` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_metode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `metode_pembayaran` (`nama_metode`) 
+VALUES ('Cash'), ('Transfer'), ('QRIS');

@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\uc_dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\applicationevents.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\applicationevents.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_booking.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\uc_booking.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\formstaff.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\formstaff.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_booking.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\uc_booking.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|c:\\users\\azira faradina\\documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\formadmin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4AC68215-AD85-4E8D-FCB2-2E9A7C159C7B}|pa-pemvis\\pa-pemvis.vbproj|solutionrelative:pa-pemvis\\formadmin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\My Project\\Application.Designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pa-pemvis\\My Project\\Application.Designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,55 +34,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormAdmin.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\FormAdmin.vb",
-              "RelativeDocumentMoniker": "pa-pemvis\\FormAdmin.vb",
-              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\FormAdmin.vb [Design]",
-              "RelativeToolTip": "pa-pemvis\\FormAdmin.vb [Design]",
+              "DocumentIndex": 5,
+              "Title": "Application.Designer.vb",
+              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\My Project\\Application.Designer.vb",
+              "RelativeDocumentMoniker": "pa-pemvis\\My Project\\Application.Designer.vb",
+              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\My Project\\Application.Designer.vb",
+              "RelativeToolTip": "pa-pemvis\\My Project\\Application.Designer.vb",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAEwBQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-05-12T18:03:03.767Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormStaff.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\FormStaff.vb",
-              "RelativeDocumentMoniker": "pa-pemvis\\FormStaff.vb",
-              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\FormStaff.vb [Design]",
-              "RelativeToolTip": "pa-pemvis\\FormStaff.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-05-12T07:47:23.952Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "uc_Dashboard.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_Dashboard.vb",
-              "RelativeDocumentMoniker": "pa-pemvis\\uc_Dashboard.vb",
-              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_Dashboard.vb [Design]",
-              "RelativeToolTip": "pa-pemvis\\uc_Dashboard.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-05-12T15:46:21.65Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-18T08:53:28.415Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ApplicationEvents.vb",
+              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\ApplicationEvents.vb",
+              "RelativeDocumentMoniker": "pa-pemvis\\ApplicationEvents.vb",
+              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\ApplicationEvents.vb",
+              "RelativeToolTip": "pa-pemvis\\ApplicationEvents.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-18T08:53:18.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.vb",
+              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\Login.vb",
+              "RelativeDocumentMoniker": "pa-pemvis\\Login.vb",
+              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\Login.vb",
+              "RelativeToolTip": "pa-pemvis\\Login.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-18T08:12:10.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\Login.vb",
+              "RelativeDocumentMoniker": "pa-pemvis\\Login.vb",
+              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\Login.vb [Design]",
+              "RelativeToolTip": "pa-pemvis\\Login.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-18T08:08:05.096Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "uc_Booking.vb [Design]",
               "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_Booking.vb",
               "RelativeDocumentMoniker": "pa-pemvis\\uc_Booking.vb",
               "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_Booking.vb [Design]",
               "RelativeToolTip": "pa-pemvis\\uc_Booking.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-05-12T07:17:04.307Z",
+              "WhenOpened": "2026-05-18T06:47:20.982Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "uc_Booking.vb",
+              "DocumentMoniker": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_Booking.vb",
+              "RelativeDocumentMoniker": "pa-pemvis\\uc_Booking.vb",
+              "ToolTip": "C:\\Users\\Azira Faradina\\Documents\\pa-pemvis\\pa-pemvis\\pa-pemvis\\uc_Booking.vb",
+              "RelativeToolTip": "pa-pemvis\\uc_Booking.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-18T08:01:18.828Z"
             }
           ]
         }

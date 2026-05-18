@@ -413,12 +413,12 @@ Partial Class uc_Booking
         Label17.TabIndex = 20
         Label17.Text = "Form Booking"
         ' 
-        ' userControlBooking
+        ' uc_Booking
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(Panel1)
-        Name = "userControlBooking"
+        Name = "uc_Booking"
         Size = New Size(1955, 1182)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
