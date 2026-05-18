@@ -40,7 +40,7 @@ Partial Class FormStaff
         lblKandang = New Label()
         panelIndicatorKandang = New Panel()
         panelHewan = New Panel()
-        lblHewn = New Label()
+        lblHewan = New Label()
         panelIndicatorHewan = New Panel()
         panelOwner = New Panel()
         lblOwner = New Label()
@@ -244,26 +244,26 @@ Partial Class FormStaff
         ' 
         ' panelHewan
         ' 
-        panelHewan.Controls.Add(lblHewn)
+        panelHewan.Controls.Add(lblHewan)
         panelHewan.Controls.Add(panelIndicatorHewan)
         panelHewan.Location = New Point(3, 439)
         panelHewan.Name = "panelHewan"
         panelHewan.Size = New Size(376, 102)
         panelHewan.TabIndex = 4
         ' 
-        ' lblHewn
+        ' lblHewan
         ' 
-        lblHewn.AutoSize = True
-        lblHewn.Dock = DockStyle.Fill
-        lblHewn.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblHewn.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
-        lblHewn.Location = New Point(5, 0)
-        lblHewn.Name = "lblHewn"
-        lblHewn.Padding = New Padding(30, 35, 0, 0)
-        lblHewn.Size = New Size(190, 69)
-        lblHewn.TabIndex = 1
-        lblHewn.Text = "Data Hewan"
-        lblHewn.TextAlign = ContentAlignment.MiddleLeft
+        lblHewan.AutoSize = True
+        lblHewan.Dock = DockStyle.Fill
+        lblHewan.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblHewan.ForeColor = Color.FromArgb(CByte(44), CByte(62), CByte(80))
+        lblHewan.Location = New Point(5, 0)
+        lblHewan.Name = "lblHewan"
+        lblHewan.Padding = New Padding(30, 35, 0, 0)
+        lblHewan.Size = New Size(190, 69)
+        lblHewan.TabIndex = 1
+        lblHewan.Text = "Data Hewan"
+        lblHewan.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' panelIndicatorHewan
         ' 
@@ -375,6 +375,7 @@ Partial Class FormStaff
         Controls.Add(Panel1)
         Controls.Add(panelUtama)
         FormBorderStyle = FormBorderStyle.FixedSingle
+        MaximizeBox = False
         Name = "FormStaff"
         Text = "Sistem Manajemen Pet Hotel"
         WindowState = FormWindowState.Maximized
@@ -414,7 +415,7 @@ Partial Class FormStaff
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblHewn As Label
+    Friend WithEvents lblHewan As Label
     Friend WithEvents panelIndicatorHewan As Panel
     Friend WithEvents panelOwner As Panel
     Friend WithEvents lblOwner As Label

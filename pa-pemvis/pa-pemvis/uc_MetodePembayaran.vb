@@ -210,4 +210,8 @@ Partial Public Class uc_MetodePembayaran
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub dgvMetode_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMetode.CellContentClick
+
+    End Sub
 End Class

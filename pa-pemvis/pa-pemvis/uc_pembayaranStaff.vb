@@ -397,6 +397,14 @@ Public Class uc_PembayaranStaff
         SetDefaultValues()
     End Sub
 
+    Private Sub PanelHeader_Paint(sender As Object, e As PaintEventArgs) Handles PanelHeader.Paint
+
+    End Sub
+
+    Private Sub dgvDetail_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDetail.CellContentClick
+
+    End Sub
+
 #End Region
 
 End Class

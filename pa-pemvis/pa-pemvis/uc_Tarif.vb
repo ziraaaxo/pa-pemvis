@@ -218,4 +218,8 @@ Partial Public Class uc_Tarif
     Private Sub dgvKandang_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvKandang.CellContentClick
 
     End Sub
+
+    Private Sub dgvPerawatan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPerawatan.CellContentClick
+
+    End Sub
 End Class

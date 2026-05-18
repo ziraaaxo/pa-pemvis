@@ -190,7 +190,7 @@ Partial Class uc_PembayaranStaff
         grpBayar.Font = New Font("Microsoft PhagsPa", 10.5F, FontStyle.Bold)
         grpBayar.Location = New Point(20, 384)
         grpBayar.Name = "grpBayar"
-        grpBayar.Padding = New Padding(4, 4, 4, 4)
+        grpBayar.Padding = New Padding(4)
         grpBayar.Size = New Size(660, 183)
         grpBayar.TabIndex = 5
         grpBayar.TabStop = False
@@ -323,9 +323,9 @@ Partial Class uc_PembayaranStaff
         grpTotal.Controls.Add(lblTotalHotel)
         grpTotal.Font = New Font("Microsoft PhagsPa", 10.5F, FontStyle.Bold)
         grpTotal.Location = New Point(20, 237)
-        grpTotal.Margin = New Padding(4, 4, 4, 4)
+        grpTotal.Margin = New Padding(4)
         grpTotal.Name = "grpTotal"
-        grpTotal.Padding = New Padding(4, 4, 4, 4)
+        grpTotal.Padding = New Padding(4)
         grpTotal.Size = New Size(660, 134)
         grpTotal.TabIndex = 4
         grpTotal.TabStop = False
@@ -337,7 +337,7 @@ Partial Class uc_PembayaranStaff
         txtGrandTotal.Font = New Font("Microsoft PhagsPa", 11F, FontStyle.Bold)
         txtGrandTotal.ForeColor = Color.White
         txtGrandTotal.Location = New Point(346, 83)
-        txtGrandTotal.Margin = New Padding(4, 4, 4, 4)
+        txtGrandTotal.Margin = New Padding(4)
         txtGrandTotal.Name = "txtGrandTotal"
         txtGrandTotal.ReadOnly = True
         txtGrandTotal.Size = New Size(306, 45)
@@ -361,7 +361,7 @@ Partial Class uc_PembayaranStaff
         txtTotalPerawatan.BackColor = SystemColors.ButtonHighlight
         txtTotalPerawatan.Font = New Font("Microsoft PhagsPa", 10F, FontStyle.Bold)
         txtTotalPerawatan.Location = New Point(480, 33)
-        txtTotalPerawatan.Margin = New Padding(4, 4, 4, 4)
+        txtTotalPerawatan.Margin = New Padding(4)
         txtTotalPerawatan.Name = "txtTotalPerawatan"
         txtTotalPerawatan.ReadOnly = True
         txtTotalPerawatan.Size = New Size(172, 42)
@@ -384,7 +384,7 @@ Partial Class uc_PembayaranStaff
         txtTotalHotel.BackColor = SystemColors.ButtonHighlight
         txtTotalHotel.Font = New Font("Microsoft PhagsPa", 10F, FontStyle.Bold)
         txtTotalHotel.Location = New Point(164, 32)
-        txtTotalHotel.Margin = New Padding(4, 4, 4, 4)
+        txtTotalHotel.Margin = New Padding(4)
         txtTotalHotel.Name = "txtTotalHotel"
         txtTotalHotel.ReadOnly = True
         txtTotalHotel.Size = New Size(168, 42)
@@ -407,9 +407,9 @@ Partial Class uc_PembayaranStaff
         grpInfo.Controls.Add(txtInfo)
         grpInfo.Font = New Font("Microsoft PhagsPa", 10.5F, FontStyle.Bold)
         grpInfo.Location = New Point(20, 70)
-        grpInfo.Margin = New Padding(4, 4, 4, 4)
+        grpInfo.Margin = New Padding(4)
         grpInfo.Name = "grpInfo"
-        grpInfo.Padding = New Padding(4, 4, 4, 4)
+        grpInfo.Padding = New Padding(4)
         grpInfo.Size = New Size(660, 154)
         grpInfo.TabIndex = 3
         grpInfo.TabStop = False
@@ -420,7 +420,7 @@ Partial Class uc_PembayaranStaff
         txtInfo.BackColor = SystemColors.ButtonHighlight
         txtInfo.Font = New Font("Microsoft PhagsPa", 9.5F)
         txtInfo.Location = New Point(20, 32)
-        txtInfo.Margin = New Padding(4, 4, 4, 4)
+        txtInfo.Margin = New Padding(4)
         txtInfo.Name = "txtInfo"
         txtInfo.ReadOnly = True
         txtInfo.Size = New Size(632, 108)
@@ -431,7 +431,7 @@ Partial Class uc_PembayaranStaff
         ' 
         btnCari.Font = New Font("Microsoft PhagsPa", 10F)
         btnCari.Location = New Point(568, 13)
-        btnCari.Margin = New Padding(4, 4, 4, 4)
+        btnCari.Margin = New Padding(4)
         btnCari.Name = "btnCari"
         btnCari.Size = New Size(104, 46)
         btnCari.TabIndex = 2
@@ -443,7 +443,7 @@ Partial Class uc_PembayaranStaff
         txtIdBooking.BackColor = SystemColors.ButtonHighlight
         txtIdBooking.Font = New Font("Microsoft PhagsPa", 11F)
         txtIdBooking.Location = New Point(183, 13)
-        txtIdBooking.Margin = New Padding(4, 4, 4, 4)
+        txtIdBooking.Margin = New Padding(4)
         txtIdBooking.Name = "txtIdBooking"
         txtIdBooking.Size = New Size(376, 45)
         txtIdBooking.TabIndex = 1

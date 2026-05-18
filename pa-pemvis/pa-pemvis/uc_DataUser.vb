@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports MySqlConnector
 
 Public Class uc_DataUser
 
@@ -183,6 +182,10 @@ Public Class uc_DataUser
         cbRole.SelectedIndex = -1
 
         lblID.Text = ""
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 

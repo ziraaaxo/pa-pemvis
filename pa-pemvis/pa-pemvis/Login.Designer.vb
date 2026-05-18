@@ -27,13 +27,13 @@ Partial Class Login
         PictureBox1 = New PictureBox()
         Label3 = New Label()
         Panel2 = New Panel()
+        btnClose = New Button()
         Btnlogin = New Button()
         Label2 = New Label()
         TxtPw = New TextBox()
         Label1 = New Label()
         txtUsername = New TextBox()
         Timer1 = New Timer(components)
-        btnClose = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -87,8 +87,21 @@ Partial Class Login
         Panel2.Size = New Size(975, 602)
         Panel2.TabIndex = 1
         ' 
+        ' btnClose
+        ' 
+        btnClose.BackColor = Color.White
+        btnClose.Font = New Font("Microsoft PhagsPa", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnClose.Location = New Point(244, 319)
+        btnClose.Margin = New Padding(5)
+        btnClose.Name = "btnClose"
+        btnClose.Size = New Size(236, 64)
+        btnClose.TabIndex = 4
+        btnClose.Text = "Close"
+        btnClose.UseVisualStyleBackColor = False
+        ' 
         ' Btnlogin
         ' 
+        Btnlogin.BackColor = Color.LightSkyBlue
         Btnlogin.Font = New Font("Microsoft PhagsPa", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Btnlogin.Location = New Point(504, 319)
         Btnlogin.Margin = New Padding(5)
@@ -96,7 +109,7 @@ Partial Class Login
         Btnlogin.Size = New Size(228, 63)
         Btnlogin.TabIndex = 2
         Btnlogin.Text = "Login"
-        Btnlogin.UseVisualStyleBackColor = True
+        Btnlogin.UseVisualStyleBackColor = False
         ' 
         ' Label2
         ' 
@@ -111,12 +124,13 @@ Partial Class Login
         ' 
         ' TxtPw
         ' 
+        TxtPw.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         TxtPw.Location = New Point(244, 248)
         TxtPw.Margin = New Padding(5)
         TxtPw.MaxLength = 10
         TxtPw.Name = "TxtPw"
         TxtPw.PasswordChar = "."c
-        TxtPw.Size = New Size(485, 39)
+        TxtPw.Size = New Size(485, 42)
         TxtPw.TabIndex = 1
         ' 
         ' Label1
@@ -133,29 +147,18 @@ Partial Class Login
         ' txtUsername
         ' 
         txtUsername.BackColor = SystemColors.HighlightText
+        txtUsername.Font = New Font("Microsoft PhagsPa", 10.125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtUsername.Location = New Point(244, 120)
         txtUsername.Margin = New Padding(5)
-        txtUsername.MaxLength = 6
+        txtUsername.MaxLength = 20
         txtUsername.Name = "txtUsername"
-        txtUsername.Size = New Size(485, 39)
+        txtUsername.Size = New Size(485, 42)
         txtUsername.TabIndex = 0
         ' 
         ' Timer1
         ' 
         Timer1.Enabled = True
         Timer1.Interval = 10
-        ' 
-        ' btnClose
-        ' 
-        btnClose.BackColor = Color.SteelBlue
-        btnClose.Font = New Font("Microsoft PhagsPa", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnClose.Location = New Point(244, 319)
-        btnClose.Margin = New Padding(5)
-        btnClose.Name = "btnClose"
-        btnClose.Size = New Size(236, 64)
-        btnClose.TabIndex = 4
-        btnClose.Text = "Close"
-        btnClose.UseVisualStyleBackColor = False
         ' 
         ' Login
         ' 

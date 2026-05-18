@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports Org.BouncyCastle.Asn1.Cmp
 
 Public Class uc_Booking
 
@@ -33,14 +32,16 @@ Public Class uc_Booking
             cbHewan.Items.Clear()
 
             CMD = New MySqlCommand(
-                "SELECT id_hewan, nama_hewan 
+                "SELECT
+                    id_hewan,
+                    nama_hewan
                  FROM hewan
                  ORDER BY nama_hewan ASC",
                 Conn)
 
-            DR = CMD.ExecuteReader
+            DR = CMD.ExecuteReader()
 
-            While DR.Read
+            While DR.Read()
 
                 cbHewan.Items.Add(New With {
                     .Text = DR("nama_hewan").ToString(),
@@ -78,15 +79,17 @@ Public Class uc_Booking
             cbKandang.Items.Clear()
 
             CMD = New MySqlCommand(
-                "SELECT id_kandang, nomor_kandang
+                "SELECT
+                    id_kandang,
+                    nomor_kandang
                  FROM kandang
-                 WHERE status_kandang='Tersedia'
+                 WHERE status_kandang='Kosong'
                  ORDER BY nomor_kandang ASC",
                 Conn)
 
-            DR = CMD.ExecuteReader
+            DR = CMD.ExecuteReader()
 
-            While DR.Read
+            While DR.Read()
 
                 cbKandang.Items.Add(New With {
                     .Text = DR("nomor_kandang").ToString(),
@@ -161,17 +164,64 @@ Public Class uc_Booking
 
             dgvBooking.DataSource = DT
 
+            ' =========================
+            ' HIDE ID
+            ' =========================
             dgvBooking.Columns(0).Visible = False
 
-            dgvBooking.Columns(1).HeaderText = "Nama Hewan"
-            dgvBooking.Columns(2).HeaderText = "Nomor Kandang"
-            dgvBooking.Columns(3).HeaderText = "Check In"
-            dgvBooking.Columns(4).HeaderText = "Check Out"
-            dgvBooking.Columns(5).HeaderText = "Status"
-            dgvBooking.Columns(6).HeaderText = "Catatan"
+            ' =========================
+            ' HEADER
+            ' =========================
+            dgvBooking.Columns(1).HeaderText =
+                "Nama Hewan"
 
+            dgvBooking.Columns(2).HeaderText =
+                "Nomor Kandang"
+
+            dgvBooking.Columns(3).HeaderText =
+                "Check In"
+
+            dgvBooking.Columns(4).HeaderText =
+                "Check Out"
+
+            dgvBooking.Columns(5).HeaderText =
+                "Status"
+
+            dgvBooking.Columns(6).HeaderText =
+                "Catatan"
+
+            ' =========================
+            ' STYLE DATAGRIDVIEW
+            ' =========================
             dgvBooking.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill
+
+            dgvBooking.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect
+
+            dgvBooking.MultiSelect = False
+
+            dgvBooking.ReadOnly = True
+
+            dgvBooking.AllowUserToAddRows = False
+
+            dgvBooking.RowHeadersVisible = False
+
+            dgvBooking.BackgroundColor = Color.White
+
+            dgvBooking.BorderStyle = BorderStyle.None
+
+            dgvBooking.DefaultCellStyle.SelectionBackColor =
+                Color.SteelBlue
+
+            dgvBooking.DefaultCellStyle.SelectionForeColor =
+                Color.White
+
+            dgvBooking.ColumnHeadersDefaultCellStyle.Font =
+                New Font("Segoe UI", 10, FontStyle.Bold)
+
+            dgvBooking.DefaultCellStyle.Font =
+                New Font("Segoe UI", 10)
 
         Catch ex As Exception
 
@@ -194,7 +244,9 @@ Public Class uc_Booking
         If cbHewan.Text = "" Or
            cbKandang.Text = "" Then
 
-            MessageBox.Show("Data belum lengkap")
+            MessageBox.Show(
+                "Data belum lengkap")
+
             Exit Sub
 
         End If
@@ -204,10 +256,12 @@ Public Class uc_Booking
             OpenConnection()
 
             Dim idHewan As Integer =
-                CType(cbHewan.SelectedItem, Object).Value
+                CType(cbHewan.SelectedItem,
+                Object).Value
 
             Dim idKandang As Integer =
-                CType(cbKandang.SelectedItem, Object).Value
+                CType(cbKandang.SelectedItem,
+                Object).Value
 
             CMD = New MySqlCommand(
                 "INSERT INTO booking
@@ -230,34 +284,49 @@ Public Class uc_Booking
                 )",
                 Conn)
 
-            CMD.Parameters.AddWithValue("@id_hewan", idHewan)
-            CMD.Parameters.AddWithValue("@id_kandang", idKandang)
-            CMD.Parameters.AddWithValue("@checkin",
-                                        dtCheckIn.Value.Date)
+            CMD.Parameters.AddWithValue(
+                "@id_hewan",
+                idHewan)
 
-            CMD.Parameters.AddWithValue("@checkout",
-                                        dtCheckOut.Value.Date)
+            CMD.Parameters.AddWithValue(
+                "@id_kandang",
+                idKandang)
 
-            CMD.Parameters.AddWithValue("@status",
-                                        cbStatus.Text)
+            CMD.Parameters.AddWithValue(
+                "@checkin",
+                dtCheckIn.Value.Date)
 
-            CMD.Parameters.AddWithValue("@catatan",
-                                        txtCatatan.Text)
+            CMD.Parameters.AddWithValue(
+                "@checkout",
+                dtCheckOut.Value.Date)
+
+            CMD.Parameters.AddWithValue(
+                "@status",
+                cbStatus.Text)
+
+            CMD.Parameters.AddWithValue(
+                "@catatan",
+                txtCatatan.Text)
 
             CMD.ExecuteNonQuery()
 
-            ' update status kandang
+            ' =========================
+            ' UPDATE STATUS KANDANG
+            ' =========================
             CMD = New MySqlCommand(
                 "UPDATE kandang
                  SET status_kandang='Terisi'
                  WHERE id_kandang=@id",
                 Conn)
 
-            CMD.Parameters.AddWithValue("@id", idKandang)
+            CMD.Parameters.AddWithValue(
+                "@id",
+                idKandang)
 
             CMD.ExecuteNonQuery()
 
-            MessageBox.Show("Booking berhasil disimpan")
+            MessageBox.Show(
+                "Booking berhasil disimpan")
 
         Catch ex As Exception
 
@@ -279,17 +348,26 @@ Public Class uc_Booking
     ' CLICK GRID
     ' =========================
     Private Sub dgvBooking_CellClick(sender As Object,
-        e As DataGridViewCellEventArgs) Handles dgvBooking.CellClick
+        e As DataGridViewCellEventArgs) _
+        Handles dgvBooking.CellClick
 
         If e.RowIndex < 0 Then Exit Sub
 
         Dim row As DataGridViewRow =
             dgvBooking.Rows(e.RowIndex)
 
-        selectedId = row.Cells(0).Value
+        selectedId =
+            Convert.ToInt32(row.Cells(0).Value)
 
-        cbHewan.Text = row.Cells(1).Value.ToString()
-        cbKandang.Text = row.Cells(2).Value.ToString()
+        ' simpan id booking hidden
+        txtIDBooking.Text =
+            row.Cells(0).Value.ToString()
+
+        cbHewan.Text =
+            row.Cells(1).Value.ToString()
+
+        cbKandang.Text =
+            row.Cells(2).Value.ToString()
 
         dtCheckIn.Value =
             Convert.ToDateTime(row.Cells(3).Value)
@@ -316,7 +394,9 @@ Public Class uc_Booking
 
         If selectedId = 0 Then
 
-            MessageBox.Show("Pilih data terlebih dahulu")
+            MessageBox.Show(
+                "Pilih data terlebih dahulu")
+
             Exit Sub
 
         End If
@@ -334,24 +414,30 @@ Public Class uc_Booking
                  WHERE id_booking=@id",
                 Conn)
 
-            CMD.Parameters.AddWithValue("@checkin",
-                                        dtCheckIn.Value.Date)
+            CMD.Parameters.AddWithValue(
+                "@checkin",
+                dtCheckIn.Value.Date)
 
-            CMD.Parameters.AddWithValue("@checkout",
-                                        dtCheckOut.Value.Date)
+            CMD.Parameters.AddWithValue(
+                "@checkout",
+                dtCheckOut.Value.Date)
 
-            CMD.Parameters.AddWithValue("@status",
-                                        cbStatus.Text)
+            CMD.Parameters.AddWithValue(
+                "@status",
+                cbStatus.Text)
 
-            CMD.Parameters.AddWithValue("@catatan",
-                                        txtCatatan.Text)
+            CMD.Parameters.AddWithValue(
+                "@catatan",
+                txtCatatan.Text)
 
-            CMD.Parameters.AddWithValue("@id",
-                                        selectedId)
+            CMD.Parameters.AddWithValue(
+                "@id",
+                selectedId)
 
             CMD.ExecuteNonQuery()
 
-            MessageBox.Show("Data berhasil diupdate")
+            MessageBox.Show(
+                "Data berhasil diupdate")
 
         Catch ex As Exception
 
@@ -376,7 +462,9 @@ Public Class uc_Booking
 
         If selectedId = 0 Then
 
-            MessageBox.Show("Pilih data terlebih dahulu")
+            MessageBox.Show(
+                "Pilih data terlebih dahulu")
+
             Exit Sub
 
         End If
@@ -400,12 +488,14 @@ Public Class uc_Booking
                  WHERE id_booking=@id",
                 Conn)
 
-            CMD.Parameters.AddWithValue("@id",
-                                        selectedId)
+            CMD.Parameters.AddWithValue(
+                "@id",
+                selectedId)
 
             CMD.ExecuteNonQuery()
 
-            MessageBox.Show("Data berhasil dihapus")
+            MessageBox.Show(
+                "Data berhasil dihapus")
 
         Catch ex As Exception
 
@@ -423,58 +513,6 @@ Public Class uc_Booking
     End Sub
 
     ' =========================
-    ' CARI
-    ' =========================
-    Private Sub btnCari_Click(sender As Object,
-        e As EventArgs) Handles btnCari.Click
-
-        Try
-
-            OpenConnection()
-
-            Dim sql As String =
-                "SELECT
-                    b.id_booking,
-                    h.nama_hewan,
-                    k.nomor_kandang,
-                    b.tanggal_checkin,
-                    b.tanggal_checkout,
-                    b.status_booking,
-                    b.catatan
-                 FROM booking b
-                 JOIN hewan h
-                    ON b.id_hewan = h.id_hewan
-                 JOIN kandang k
-                    ON b.id_kandang = k.id_kandang
-                 WHERE h.nama_hewan LIKE @cari"
-
-            CMD = New MySqlCommand(sql, Conn)
-
-            CMD.Parameters.AddWithValue(
-                "@cari",
-                "%" & txtCari.Text & "%")
-
-            DA = New MySqlDataAdapter(CMD)
-
-            DT = New DataTable
-
-            DA.Fill(DT)
-
-            dgvBooking.DataSource = DT
-
-        Catch ex As Exception
-
-            MessageBox.Show(ex.Message)
-
-        Finally
-
-            CloseConnection()
-
-        End Try
-
-    End Sub
-
-    ' =========================
     ' CLEAR FORM
     ' =========================
     Sub ClearForm()
@@ -486,6 +524,8 @@ Public Class uc_Booking
 
         txtCatatan.Clear()
         txtCari.Clear()
+
+        txtIDBooking.Clear()
 
         selectedId = 0
 

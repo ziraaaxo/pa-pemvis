@@ -3,203 +3,472 @@ Imports System.Data
 
 Public Class uc_PerawatanStaff
 
-    Private Sub uc_PerawatanStaff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    ' =====================================
+    ' LOAD USERCONTROL
+    ' =====================================
+    Private Sub uc_PerawatanStaff_Load(sender As Object,
+                                       e As EventArgs) _
+                                       Handles MyBase.Load
+
         dtTanggal.Value = Date.Today
+
         btnUpdate.Enabled = False
         btnHapus.Enabled = False
 
-        LoadComboBoxes()
-        LoadData()
+        txtTarif.ReadOnly = True
+
+        TampilHewan()
+        TampilPerawatan()
+        TampilData()
+
     End Sub
 
-    Private Sub LoadComboBoxes()
-        OpenConnection()
+    ' =====================================
+    ' TAMPIL COMBO HEWAN
+    ' =====================================
+    Sub TampilHewan()
+
         Try
-            CMD = New MySqlCommand("SELECT id, nama FROM hewan", Conn)
-            DA = New MySqlDataAdapter(CMD)
+
+            OpenConnection()
+
+            DA = New MySqlDataAdapter(
+                "SELECT
+                    id_hewan,
+                    nama_hewan
+                 FROM hewan
+                 ORDER BY nama_hewan ASC",
+                Conn)
+
             DT = New DataTable
+
             DA.Fill(DT)
+
             cbNamaHewan.DataSource = DT
-            cbNamaHewan.DisplayMember = "nama"
-            cbNamaHewan.ValueMember = "id"
 
-            CMD = New MySqlCommand("SELECT id, nama, harga FROM jenis_perawatan", Conn)
-            DA = New MySqlDataAdapter(CMD)
-            DT = New DataTable
-            DA.Fill(DT)
-            cbJenisPerawatan.DataSource = DT
-            cbJenisPerawatan.DisplayMember = "nama"
-            cbJenisPerawatan.ValueMember = "id"
+            cbNamaHewan.DisplayMember =
+                "nama_hewan"
+
+            cbNamaHewan.ValueMember =
+                "id_hewan"
+
+            cbNamaHewan.SelectedIndex = -1
 
         Catch ex As Exception
-            MessageBox.Show("Gagal memuat data ComboBox: " & ex.Message)
+
+            MessageBox.Show(ex.Message)
+
         Finally
+
             CloseConnection()
+
         End Try
+
     End Sub
 
-    Private Sub LoadData()
-        OpenConnection()
+    ' =====================================
+    ' TAMPIL COMBO PERAWATAN
+    ' =====================================
+    Sub TampilPerawatan()
+
         Try
-            Dim query As String = "
-                SELECT 
-                    p.id, 
-                    h.nama AS Hewan, 
-                    jp.nama AS Perawatan, 
-                    p.tanggal, 
-                    p.catatan 
-                FROM perawatan p
-                JOIN hewan h ON p.id_hewan = h.id
-                JOIN jenis_perawatan jp ON p.id_jenis_perawatan = jp.id
-                ORDER BY p.tanggal DESC"
 
-            CMD = New MySqlCommand(query, Conn)
-            DA = New MySqlDataAdapter(CMD)
+            OpenConnection()
+
+            DA = New MySqlDataAdapter(
+                "SELECT
+                    id_perawatan,
+                    nama_perawatan,
+                    harga
+                 FROM perawatan
+                 ORDER BY nama_perawatan ASC",
+                Conn)
+
             DT = New DataTable
+
             DA.Fill(DT)
-            dgvPerawatan.DataSource = DT
-            dgvPerawatan.Columns("id").Visible = False
+
+            cbJenisPerawatan.DataSource = DT
+
+            cbJenisPerawatan.DisplayMember =
+                "nama_perawatan"
+
+            cbJenisPerawatan.ValueMember =
+                "id_perawatan"
+
+            cbJenisPerawatan.SelectedIndex = -1
 
         Catch ex As Exception
-            MessageBox.Show("Gagal memuat data tabel: " & ex.Message)
+
+            MessageBox.Show(ex.Message)
+
         Finally
+
             CloseConnection()
+
         End Try
+
     End Sub
 
-    Private Sub ClearInput()
-        cbNamaHewan.SelectedIndex = -1
-        cbJenisPerawatan.SelectedIndex = -1
-        txtTarif.Text = ""
-        dtTanggal.Value = Date.Today
-        txtCatatan.Clear()
-    End Sub
+    ' =====================================
+    ' AUTO TAMPIL TARIF
+    ' =====================================
+    Private Sub cbJenisPerawatan_SelectedIndexChanged(
+        sender As Object,
+        e As EventArgs) _
+        Handles cbJenisPerawatan.SelectedIndexChanged
 
-    Private Sub cbJenisPerawatan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbJenisPerawatan.SelectedIndexChanged
-        If cbJenisPerawatan.SelectedIndex > -1 Then
-            Dim row As DataRowView = CType(cbJenisPerawatan.SelectedItem, DataRowView)
-            If row IsNot Nothing Then
-                txtTarif.Text = row("harga").ToString()
+        Try
+
+            If cbJenisPerawatan.SelectedIndex <> -1 Then
+
+                Dim row As DataRowView =
+                    CType(cbJenisPerawatan.SelectedItem,
+                    DataRowView)
+
+                txtTarif.Text =
+                    row("harga").ToString()
+
             End If
-        Else
-            txtTarif.Text = ""
-        End If
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
-    Private Sub dgvPerawatan_SelectionChanged(sender As Object, e As EventArgs) Handles dgvPerawatan.SelectionChanged
-        If dgvPerawatan.SelectedRows.Count > 0 Then
+    ' =====================================
+    ' TAMPIL DATA
+    ' =====================================
+    Sub TampilData()
+
+        Try
+
+            OpenConnection()
+
+            DA = New MySqlDataAdapter(
+                "SELECT
+                    dp.id_detail,
+                    h.nama_hewan,
+                    p.nama_perawatan,
+                    p.harga,
+                    dp.qty,
+                    dp.subtotal
+                 FROM detail_perawatan dp
+                 JOIN booking b
+                    ON dp.id_booking = b.id_booking
+                 JOIN hewan h
+                    ON b.id_hewan = h.id_hewan
+                 JOIN perawatan p
+                    ON dp.id_perawatan = p.id_perawatan
+                 ORDER BY dp.id_detail DESC",
+                Conn)
+
+            DT = New DataTable
+
+            DA.Fill(DT)
+
+            dgvPerawatan.DataSource = DT
+
+            dgvPerawatan.Columns(0).Visible = False
+
+            dgvPerawatan.Columns(1).HeaderText =
+                "Nama Hewan"
+
+            dgvPerawatan.Columns(2).HeaderText =
+                "Jenis Perawatan"
+
+            dgvPerawatan.Columns(3).HeaderText =
+                "Tarif"
+
+            dgvPerawatan.Columns(4).HeaderText =
+                "Qty"
+
+            dgvPerawatan.Columns(5).HeaderText =
+                "Subtotal"
+
+            dgvPerawatan.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message)
+
+        Finally
+
+            CloseConnection()
+
+        End Try
+
+    End Sub
+
+    ' =====================================
+    ' CLEAR FORM
+    ' =====================================
+    Sub Bersih()
+
+        cbNamaHewan.SelectedIndex = -1
+
+        cbJenisPerawatan.SelectedIndex = -1
+
+        txtTarif.Clear()
+
+        txtCatatan.Clear()
+
+        dtTanggal.Value = Date.Today
+
+    End Sub
+
+    ' =====================================
+    ' SIMPAN
+    ' =====================================
+    Private Sub btnSimpan_Click(sender As Object,
+                                e As EventArgs) _
+                                Handles btnSimpan.Click
+
+        If cbNamaHewan.Text = "" Then
+
+            MessageBox.Show(
+                "Nama hewan wajib dipilih")
+
+            Exit Sub
+
+        End If
+
+        If cbJenisPerawatan.Text = "" Then
+
+            MessageBox.Show(
+                "Jenis perawatan wajib dipilih")
+
+            Exit Sub
+
+        End If
+
+        Try
+
+            OpenConnection()
+
+            ' cari id booking berdasarkan hewan
+            Dim idBooking As Integer = 0
+
+            CMD = New MySqlCommand(
+                "SELECT id_booking
+                 FROM booking
+                 WHERE id_hewan=@idHewan
+                 ORDER BY id_booking DESC
+                 LIMIT 1", Conn)
+
+            CMD.Parameters.AddWithValue(
+                "@idHewan",
+                cbNamaHewan.SelectedValue)
+
+            Dim result = CMD.ExecuteScalar()
+
+            If result IsNot Nothing Then
+
+                idBooking = result
+
+            Else
+
+                MessageBox.Show(
+                    "Booking tidak ditemukan")
+
+                Exit Sub
+
+            End If
+
+            ' subtotal = harga
+            Dim subtotal As Decimal =
+                Val(txtTarif.Text)
+
+            CMD = New MySqlCommand(
+                "INSERT INTO detail_perawatan
+                (
+                    id_booking,
+                    id_perawatan,
+                    qty,
+                    subtotal
+                )
+                VALUES
+                (
+                    @idBooking,
+                    @idPerawatan,
+                    @qty,
+                    @subtotal
+                )", Conn)
+
+            CMD.Parameters.AddWithValue(
+                "@idBooking",
+                idBooking)
+
+            CMD.Parameters.AddWithValue(
+                "@idPerawatan",
+                cbJenisPerawatan.SelectedValue)
+
+            CMD.Parameters.AddWithValue(
+                "@qty",
+                1)
+
+            CMD.Parameters.AddWithValue(
+                "@subtotal",
+                subtotal)
+
+            CMD.ExecuteNonQuery()
+
+            MessageBox.Show(
+                "Data berhasil disimpan")
+
+            TampilData()
+
+            Bersih()
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message)
+
+        Finally
+
+            CloseConnection()
+
+        End Try
+
+    End Sub
+
+    ' =====================================
+    ' KLIK DATA GRID
+    ' =====================================
+    Private Sub dgvPerawatan_CellClick(
+        sender As Object,
+        e As DataGridViewCellEventArgs) _
+        Handles dgvPerawatan.CellClick
+
+        If e.RowIndex >= 0 Then
+
             btnUpdate.Enabled = True
             btnHapus.Enabled = True
-        Else
-            btnUpdate.Enabled = False
-            btnHapus.Enabled = False
-        End If
-    End Sub
 
-    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        If IsComboEmpty(cbNamaHewan) Then Return
-        If IsComboEmpty(cbJenisPerawatan) Then Return
-        If IsEmpty(txtTarif) Then Return
+            cbNamaHewan.Text =
+                dgvPerawatan.Rows(e.RowIndex).
+                Cells(1).Value.ToString()
 
-        Dim idHewan As Integer = CInt(cbNamaHewan.SelectedValue)
-        Dim idJenis As Integer = CInt(cbJenisPerawatan.SelectedValue)
-        Dim tanggal As Date = dtTanggal.Value
-        Dim catatan As String = txtCatatan.Text
+            cbJenisPerawatan.Text =
+                dgvPerawatan.Rows(e.RowIndex).
+                Cells(2).Value.ToString()
 
-        OpenConnection()
-        Try
-            Dim query As String = "INSERT INTO perawatan (id_hewan, id_jenis_perawatan, tanggal, catatan) VALUES (@idHewan, @idJenis, @tanggal, @catatan)"
-            CMD = New MySqlCommand(query, Conn)
-            CMD.Parameters.AddWithValue("@idHewan", idHewan)
-            CMD.Parameters.AddWithValue("@idJenis", idJenis)
-            CMD.Parameters.AddWithValue("@tanggal", tanggal.ToString("yyyy-MM-dd"))
-            CMD.Parameters.AddWithValue("@catatan", catatan)
+            txtTarif.Text =
+                dgvPerawatan.Rows(e.RowIndex).
+                Cells(3).Value.ToString()
 
-            CMD.ExecuteNonQuery()
-            MessageBox.Show("Data Perawatan berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            LoadData()
-            ClearInput()
-
-        Catch ex As Exception
-            MessageBox.Show("Gagal menyimpan data: " & ex.Message)
-        Finally
-            CloseConnection()
-        End Try
-    End Sub
-
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If dgvPerawatan.SelectedRows.Count = 0 Then
-            MessageBox.Show("Pilih data yang ingin diupdate.")
-            Return
         End If
 
-        Dim idPerawatan As Integer = dgvPerawatan.CurrentRow.Cells("id").Value
+    End Sub
 
-        If IsComboEmpty(cbNamaHewan) Then Return
-        If IsComboEmpty(cbJenisPerawatan) Then Return
-
-        Dim idHewan As Integer = cbNamaHewan.SelectedValue
-        Dim idJenis As Integer = cbJenisPerawatan.SelectedValue
-        Dim tanggal = dtTanggal.Value
-        Dim catatan = txtCatatan.Text
-
-        OpenConnection()
+    ' =====================================
+    ' UPDATE
+    ' =====================================
+    Private Sub btnUpdate_Click(sender As Object,
+                                e As EventArgs) _
+                                Handles btnUpdate.Click
 
         Try
-            Dim query = "UPDATE perawatan SET id_hewan=@idHewan, id_jenis_perawatan=@idJenis, tanggal=@tanggal, catatan=@catatan WHERE id=@idPerawatan"
-            CMD = New MySqlCommand(query, Conn)
-            CMD.Parameters.AddWithValue("@idHewan", idHewan)
-            CMD.Parameters.AddWithValue("@idJenis", idJenis)
-            CMD.Parameters.AddWithValue("@tanggal", tanggal.ToString("yyyy-MM-dd"))
-            CMD.Parameters.AddWithValue("@catatan", catatan)
-            CMD.Parameters.AddWithValue("@idPerawatan", idPerawatan)
 
-            CMD.ExecuteNonQuery()
-            MessageBox.Show("Data Perawatan berhasil diupdate!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            LoadData()
-            ClearInput()
-            btnUpdate.Enabled = False
-            btnHapus.Enabled = False
-
-        Catch ex As Exception
-            MessageBox.Show("Gagal mengupdate data: " & ex.Message)
-        Finally
-            CloseConnection()
-        End Try
-    End Sub
-
-    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        If dgvPerawatan.SelectedRows.Count = 0 Then
-            MessageBox.Show("Pilih data yang ingin dihapus.")
-            Return
-        End If
-
-        Dim idPerawatan As Integer = CInt(dgvPerawatan.CurrentRow.Cells("id").Value)
-        Dim result As DialogResult = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If result = DialogResult.Yes Then
             OpenConnection()
+
+            Dim subtotal As Decimal =
+                Val(txtTarif.Text)
+
+            CMD = New MySqlCommand(
+                "UPDATE detail_perawatan SET
+                    id_perawatan=@idPerawatan,
+                    subtotal=@subtotal
+                 WHERE id_detail=@id",
+                Conn)
+
+            CMD.Parameters.AddWithValue(
+                "@id",
+                dgvPerawatan.CurrentRow.
+                Cells(0).Value)
+
+            CMD.Parameters.AddWithValue(
+                "@idPerawatan",
+                cbJenisPerawatan.SelectedValue)
+
+            CMD.Parameters.AddWithValue(
+                "@subtotal",
+                subtotal)
+
+            CMD.ExecuteNonQuery()
+
+            MessageBox.Show(
+                "Data berhasil diupdate")
+
+            TampilData()
+
+            Bersih()
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message)
+
+        Finally
+
+            CloseConnection()
+
+        End Try
+
+    End Sub
+
+    ' =====================================
+    ' HAPUS
+    ' =====================================
+    Private Sub btnHapus_Click(sender As Object,
+                               e As EventArgs) _
+                               Handles btnHapus.Click
+
+        Dim jawab As DialogResult
+
+        jawab = MessageBox.Show(
+            "Yakin ingin menghapus data?",
+            "Konfirmasi",
+            MessageBoxButtons.YesNo)
+
+        If jawab = DialogResult.Yes Then
+
             Try
-                Dim query As String = "DELETE FROM perawatan WHERE id=@idPerawatan"
-                CMD = New MySqlCommand(query, Conn)
-                CMD.Parameters.AddWithValue("@idPerawatan", idPerawatan)
+
+                OpenConnection()
+
+                CMD = New MySqlCommand(
+                    "DELETE FROM detail_perawatan
+                     WHERE id_detail=@id",
+                    Conn)
+
+                CMD.Parameters.AddWithValue(
+                    "@id",
+                    dgvPerawatan.CurrentRow.
+                    Cells(0).Value)
 
                 CMD.ExecuteNonQuery()
-                MessageBox.Show("Data berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                LoadData()
-                ClearInput()
-                btnUpdate.Enabled = False
-                btnHapus.Enabled = False
+                MessageBox.Show(
+                    "Data berhasil dihapus")
+
+                TampilData()
+
+                Bersih()
 
             Catch ex As Exception
-                MessageBox.Show("Gagal menghapus data: " & ex.Message)
+
+                MessageBox.Show(ex.Message)
+
             Finally
+
                 CloseConnection()
+
             End Try
+
         End If
+
     End Sub
 
 End Class

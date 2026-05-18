@@ -2,7 +2,7 @@
 
 Partial Public Class uc_Kandang
 
-    Dim selectedId As Integer = 0   
+    Dim selectedId As Integer = 0
 
     ' ─────────────────────────────────────────────
     ' LOAD
@@ -253,4 +253,7 @@ Partial Public Class uc_Kandang
         Return True
     End Function
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

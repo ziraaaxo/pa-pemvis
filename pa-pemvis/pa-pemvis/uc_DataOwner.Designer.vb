@@ -31,6 +31,7 @@ Partial Class uc_DataOwner
         dgvOwner = New DataGridView()
         Panel1 = New Panel()
         Label17 = New Label()
+        txtID = New TextBox()
         CType(dgvOwner, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -179,6 +180,7 @@ Partial Class uc_DataOwner
         Panel1.Controls.Add(btnTambah)
         Panel1.Controls.Add(txtNoHP)
         Panel1.Controls.Add(txtEmail)
+        Panel1.Controls.Add(txtID)
         Panel1.Location = New Point(62, 146)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1816, 988)
@@ -195,6 +197,14 @@ Partial Class uc_DataOwner
         Label17.Size = New Size(249, 55)
         Label17.TabIndex = 21
         Label17.Text = "Data Owner"
+        ' 
+        ' txtID
+        ' 
+        txtID.Location = New Point(1447, 550)
+        txtID.Name = "txtID"
+        txtID.Size = New Size(10, 39)
+        txtID.TabIndex = 11
+        txtID.Visible = False
         ' 
         ' uc_DataOwner
         ' 
@@ -231,5 +241,6 @@ Partial Class uc_DataOwner
     Friend WithEvents dgvOwner As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label17 As Label
+    Friend WithEvents txtID As TextBox
 
 End Class

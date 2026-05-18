@@ -102,7 +102,7 @@ Partial Class uc_MetodePembayaran
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Microsoft PhagsPa", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Microsoft PhagsPa", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = SystemColors.ControlText
         Label2.Location = New Point(29, 26)
         Label2.Name = "Label2"
@@ -163,7 +163,7 @@ Partial Class uc_MetodePembayaran
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Microsoft PhagsPa", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Microsoft PhagsPa", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = SystemColors.ControlText
         Label1.Location = New Point(32, 22)
         Label1.Name = "Label1"
@@ -196,7 +196,7 @@ Partial Class uc_MetodePembayaran
         ' 
         PictureBox1.Image = My.Resources.Resources.images_removebg_preview
         PictureBox1.Location = New Point(0, 235)
-        PictureBox1.Margin = New Padding(5, 5, 5, 5)
+        PictureBox1.Margin = New Padding(5)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(696, 379)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -225,7 +225,7 @@ Partial Class uc_MetodePembayaran
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft PhagsPa", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Microsoft PhagsPa", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = SystemColors.ControlText
         Label3.Location = New Point(32, 22)
         Label3.Name = "Label3"
@@ -247,7 +247,7 @@ Partial Class uc_MetodePembayaran
         ' 
         ' uc_MetodePembayaran
         ' 
-        AutoScaleDimensions = New SizeF(13.0F, 32.0F)
+        AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(Panel1)
         Name = "uc_MetodePembayaran"

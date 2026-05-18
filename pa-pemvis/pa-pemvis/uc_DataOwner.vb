@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports MySqlConnector
 
 Public Class uc_DataOwner
 
@@ -90,7 +89,7 @@ Public Class uc_DataOwner
                 email=@email
                 WHERE id_owner=@id", Conn)
 
-            CMD.Parameters.AddWithValue("@id", lblID.Text)
+            CMD.Parameters.AddWithValue("@id", txtID.Text)
             CMD.Parameters.AddWithValue("@nama", txtNama.Text)
             CMD.Parameters.AddWithValue("@hp", txtNoHP.Text)
             CMD.Parameters.AddWithValue("@alamat", txtAlamat.Text)
@@ -127,7 +126,7 @@ Public Class uc_DataOwner
                 "DELETE FROM owner
                 WHERE id_owner=@id", Conn)
 
-            CMD.Parameters.AddWithValue("@id", lblID.Text)
+            CMD.Parameters.AddWithValue("@id", txtID.Text)
 
             CMD.ExecuteNonQuery
 
@@ -155,7 +154,7 @@ Public Class uc_DataOwner
 
         If e.RowIndex >= 0 Then
 
-            lblID.Text =
+            txtID.Text =
                 dgvOwner.Rows(e.RowIndex).Cells(0).Value.ToString()
 
             txtNama.Text =
@@ -181,8 +180,11 @@ Public Class uc_DataOwner
         txtAlamat.Clear()
         txtEmail.Clear()
 
-        lblID.Text = ""
+        txtID.Text = ""
 
     End Sub
 
+    Private Sub dgvOwner_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOwner.CellContentClick
+
+    End Sub
 End Class

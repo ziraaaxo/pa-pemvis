@@ -29,9 +29,9 @@ Partial Class uc_DataHewan
         lblID = New Label()
         Panel4 = New Panel()
         Panel3 = New Panel()
-        Label10 = New Label()
-        Label9 = New Label()
         Label11 = New Label()
+        Label9 = New Label()
+        Label10 = New Label()
         Label17 = New Label()
         CType(dgvHewan, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
@@ -257,16 +257,14 @@ Partial Class uc_DataHewan
         Panel3.Size = New Size(696, 608)
         Panel3.TabIndex = 16
         ' 
-        ' Label10
+        ' Label11
         ' 
-        Label10.AutoSize = True
-        Label10.Font = New Font("Microsoft PhagsPa", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label10.ForeColor = SystemColors.ControlText
-        Label10.Location = New Point(33, 22)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(273, 41)
-        Label10.TabIndex = 15
-        Label10.Text = "Input Data Hewan"
+        Label11.Font = New Font("Microsoft PhagsPa", 12F)
+        Label11.Location = New Point(479, 534)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(114, 48)
+        Label11.TabIndex = 17
+        Label11.Text = "kg"
         ' 
         ' Label9
         ' 
@@ -277,14 +275,16 @@ Partial Class uc_DataHewan
         Label9.TabIndex = 16
         Label9.Text = "Bulan"
         ' 
-        ' Label11
+        ' Label10
         ' 
-        Label11.Font = New Font("Microsoft PhagsPa", 12F)
-        Label11.Location = New Point(479, 534)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(114, 48)
-        Label11.TabIndex = 17
-        Label11.Text = "kg"
+        Label10.AutoSize = True
+        Label10.Font = New Font("Microsoft PhagsPa", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label10.ForeColor = SystemColors.ControlText
+        Label10.Location = New Point(33, 22)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(273, 41)
+        Label10.TabIndex = 15
+        Label10.Text = "Input Data Hewan"
         ' 
         ' Label17
         ' 

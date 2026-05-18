@@ -55,6 +55,7 @@ Partial Class uc_Booking
         cbHewan = New ComboBox()
         Label10 = New Label()
         Label17 = New Label()
+        txtIDBooking = New TextBox()
         Panel1.SuspendLayout()
         Panel9.SuspendLayout()
         Panel10.SuspendLayout()
@@ -365,6 +366,7 @@ Partial Class uc_Booking
         Panel3.BackColor = Color.AliceBlue
         Panel3.Controls.Add(Label16)
         Panel3.Controls.Add(cbHewan)
+        Panel3.Controls.Add(txtIDBooking)
         Panel3.Location = New Point(33, 83)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(696, 112)
@@ -412,6 +414,14 @@ Partial Class uc_Booking
         Label17.Size = New Size(289, 55)
         Label17.TabIndex = 20
         Label17.Text = "Form Booking"
+        ' 
+        ' txtIDBooking
+        ' 
+        txtIDBooking.Location = New Point(217, 37)
+        txtIDBooking.Name = "txtIDBooking"
+        txtIDBooking.Size = New Size(10, 39)
+        txtIDBooking.TabIndex = 24
+        txtIDBooking.Visible = False
         ' 
         ' uc_Booking
         ' 
@@ -476,5 +486,6 @@ Partial Class uc_Booking
     Friend WithEvents txtCari As TextBox
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtIDBooking As TextBox
 
 End Class
